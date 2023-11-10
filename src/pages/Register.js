@@ -11,6 +11,7 @@ import '../App.css';
 const Register = () => {
   const navigate = useNavigate();
   const [nickname, setNickname] = useState('');
+  const [score] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -27,6 +28,7 @@ const Register = () => {
         uid: user.uid,
         nickname: nickname,
         email: email,
+        score: score,
         // You can add more user-related data here
       });
 
@@ -57,6 +59,7 @@ const Register = () => {
             placeholder='Nickname'
           />
         </div>
+
 
         <div>
           <input
