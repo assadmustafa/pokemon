@@ -13,7 +13,7 @@ function SignOut() {
       setSigningOut(true);
       await auth.signOut();
       // The user is now signed out.
-      toast.success('تم تسجيل الخروج بنجاح');
+      toast.success('Signed out successfully');
       navigate('/');
     } catch (error) {
       console.error('Error signing out:', error);

@@ -6,7 +6,6 @@ import { auth } from '../firebase';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
-import '../App.css';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -48,7 +47,7 @@ const Register = () => {
     <div className='background'>
       <div className='spacer'></div>
       <form>
-        <h1> Make new account </h1>
+        <h1> Sign up </h1>
         <div>
           <input
             type='text'
@@ -83,7 +82,7 @@ const Register = () => {
           />
         </div>
 
-        <button type='submit' onClick={onSubmit}>
+        <button type='submit' onClick={onSubmit} className='button'>
           Sign up
         </button>
       </form>

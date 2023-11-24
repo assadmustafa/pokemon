@@ -5,6 +5,8 @@ import '../index.css';
 import { auth } from "../firebase";
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Layout = () => {
@@ -33,7 +35,11 @@ const Layout = () => {
           </>
           
           ) : 
-          <li onClick={()=>{auth.signOut()}}>
+          <li onClick={()=>{
+            auth.signOut();
+            toast.success('User signed out successfully');
+
+            }}>
             <p className="link">Logout</p>
           </li>
           }

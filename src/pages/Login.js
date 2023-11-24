@@ -4,7 +4,6 @@ import { auth } from '../firebase';
 import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
-import '../App.css';
 import '../index.css';
 
  
@@ -61,7 +60,7 @@ const Login = () => {
                 </div>
                                                 
                 <div>
-                    <button onClick={onLogin}> Login </button>
+                    <button className='button' onClick={onLogin}> Login </button>
                 </div>
 
             </form>                            

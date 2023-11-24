@@ -6,6 +6,7 @@ import NoPage from "./pages/NoPage";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import SignOut from "./SignOut";
+import Game from "./pages/Game";
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap');
 </style>
@@ -16,6 +17,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="game" element={<Game />} />
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
           <Route path="signout" element={<SignOut />} />

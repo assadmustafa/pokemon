@@ -1,19 +1,99 @@
-* {
-  margin: 0;
-  font-family: 'Cairo', sans-serif;
+@import './index.css';
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.font-pokemon {
+  font-family: 'Press Start 2P', cursive;
 }
 
+.animated-gradient {
+  font-family: 'Press Start 2P', cursive;
+  background: linear-gradient(45deg, #f7d200, #005cbf, #ff1a1a);
+  background-size: 200% 200%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: gradientAnimation 2s ease infinite;
+  font-size: 42px;
+  
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+* {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+}
 
 ul {
   list-style: none;
-  width: 97.4%;
   background-color: red;
-  height: 60px;
+  height: 50px;
 }
 
 li {
   float: right;
   padding: 16px;
+}
+
+.video{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  background-color: red;
+}
+
+.container-landing {
+  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #000;
+  width: 100%;
+  text-align: center;
+  
+}
+
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+  padding-top: 5rem;
+}
+
+.pokeball {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  transform: none;
+  transition-property: transform;
+  transition-duration: 0.3s;
+}
+
+.pokeball img {
+  cursor: pointer;
+  width: 10rem;
+  height: 10rem;
+}
+
+.pokeball:hover {
+  transform: scale(1.1);
 }
 
 h1 {
@@ -27,7 +107,16 @@ h1 {
 .background {
   background: url(../src/images/background.jpg) no-repeat center fixed; 
   background-size: cover;
-  height: 91.33vh;
+  height: 95.3vh;
+}
+
+.achtergrond {
+  top: 0;
+  background-image: url('../public/images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .spacer {
@@ -43,6 +132,7 @@ form {
   padding: 20px;
   border-radius: 15px;
   color: white;
+  font-family: 'Press Start 2P', cursive;
 }
 
 input {
@@ -54,7 +144,7 @@ input {
   text-align: left;
 }
 
-button {
+.button {
   border-radius: 7px;
   border-color: transparent;
   width: 40%;
@@ -64,8 +154,9 @@ button {
   background-color: red;
   color: white;
   font-weight: bold;
-  font-size: large;
+  font-size: medium;
   cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .link {
@@ -73,8 +164,88 @@ button {
   font-weight: bold;
   color: white;
   cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .link:hover {
   color: yellow;
+}
+
+/* Game Css */
+
+.game-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+}
+
+.console {
+  border: brown solid 2px;
+  border-radius: 0.5rem;
+  height: 100px;
+  width: 80%;
+  margin-left: 10%;
+  background-color: wheat;
+}
+
+.mr {
+  margin-right: 1rem;
+}
+
+.pokemon {
+  width: 16rem;
+  height: 16rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  background-color: #4299e1;
+  border: none;
+  color: #ffffff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #005cbf;
+}
+
+.correct {
+  margin-top: 1rem;
+  text-align: center;
+  color: #48bb78;
+  font-weight: bold;
+}
+
+.wrong {
+  margin-top: 1rem;
+  text-align: center;
+  color: #e53e3e;
+  font-weight: bold;
+}
+
+.next {
+  background-color: #e53e3e;
+  color: #ffffff;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  float: right;
+  margin-right: 2rem;
+  cursor: pointer;
 }
