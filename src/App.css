@@ -174,20 +174,19 @@ input {
 /* Game Css */
 
 .game-container {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20rem;
   padding: 1rem;
   border-radius: 0.5rem;
   display: flex;
 }
 
 .console {
-  border: brown solid 2px;
+  border: blue solid 2px;
   border-radius: 0.5rem;
-  height: 100px;
-  width: 80%;
+  height: 120px;
+  width: 40%;
   margin-left: 10%;
-  background-color: wheat;
+  background-color: black;
 }
 
 .mr {
@@ -238,14 +237,13 @@ input {
 }
 
 .next {
-  background-color: #e53e3e;
-  color: #ffffff;
+  background-color: white;
+  color: black;
   padding: 1rem;
   margin-top: 0.5rem;
   border: none;
   border-radius: 15px;
   font-weight: bold;
-  float: right;
-  margin-right: 2rem;
+  margin-top: 1rem;
   cursor: pointer;
 }
