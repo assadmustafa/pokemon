@@ -116,11 +116,11 @@ h1 {
 
 .achtergrond {
   top: 0;
-  background-image: url("../public/images/background.png");
+  background-image: url("../public/videos/gameBG.gif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 92.9vh;
 }
 
 .spacer {
@@ -178,10 +178,11 @@ input {
 /* Game Css */
 
 .game-container {
-  margin-left: 20rem;
   padding: 1rem;
   border-radius: 0.5rem;
   display: flex;
+  float: right;
+  margin-right: 200px;
 }
 
 .console {
@@ -189,15 +190,19 @@ input {
   height: 120px;
   width: 40%;
   margin-left: 10%;
+  float: right;
+  margin-right: 12.5rem;
 }
 
 .mr {
-  margin-right: 1rem;
+  margin-right: 36rem;
+  margin-top: 2rem;
+  float: left;
 }
 
 .pokemon {
-  width: 16rem;
-  height: 16rem;
+  width: 25rem;
+  height: 25rem;
   object-fit: cover;
   border-radius: 0.5rem;
 }
@@ -205,18 +210,19 @@ input {
 .options {
   display: flex;
   flex-direction: column;
+  padding-top: 10rem;
 }
 
 .option {
   background-color: #4299e1;
   border: none;
   color: #ffffff;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   border-radius: 0.25rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   cursor: pointer;
 }
 
@@ -229,6 +235,7 @@ input {
   text-align: center;
   color: #48bb78;
   font-weight: bold;
+  float: right;
 }
 
 .wrong {
@@ -248,6 +255,15 @@ input {
   font-weight: bold;
   margin-top: 1rem;
   cursor: pointer;
+  float: right;
+}
+
+.timer {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  float: right;
+  margin-top: 10rem;
+  padding-left: 10rem;
 }
 
 .mute-button {
