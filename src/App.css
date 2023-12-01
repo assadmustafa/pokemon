@@ -249,3 +249,14 @@ input {
   margin-top: 1rem;
   cursor: pointer;
 }
+
+.mute-button {
+  position: absolute;
+  bottom: 10px; /* Adjust this value to set the distance from the bottom */
+  left: 10px; /* Adjust this value to set the distance from the left */
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
