@@ -6,7 +6,7 @@ const Game = () => {
   const [options, setOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
   const [correct, setCorrect] = useState(false);
-  const [timer, setTimer] = useState(20);
+  const [timer, setTimer] = useState(10); // Change the initial timer value to 10
   const [score, setScore] = useState(0);
   let timerInterval;
 
@@ -23,7 +23,7 @@ const Game = () => {
       clearInterval(timerInterval);
       if (!correct) {
         handleNextPokemon();
-        setScore(0); // Reset the score to 0 when the timer runs out
+        setScore(0);
       }
     }
 
@@ -66,7 +66,7 @@ const Game = () => {
       );
       setPokemon(response.data);
       generateOptions(response.data);
-      setTimer(20);
+      setTimer(10); // Change the timer value to 10 for each new Pokemon
     } catch (error) {
       console.error("Error fetching Pokemon:", error);
     }
