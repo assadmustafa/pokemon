@@ -1,16 +1,16 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
   const navigate = useNavigate();
 
   const onStart = () => {
     // Replace '/another-page' with the actual path you want to navigate to
-    navigate('/game');
+    navigate("/game");
   };
 
   return (
-    <div className='container-landing'>
+    <div className="container-landing">
       {/* Local Video */}
       <video autoPlay loop muted className="video">
         <source src="/videos/myvideo.mp4" type="video/mp4" />
@@ -21,7 +21,7 @@ const LandingPage = () => {
       <div className="content">
         {/* Animated Gradient Text */}
         <h1>
-          <span className="animated-gradient">Guess the Pokemon</span>
+          <img src="./images/hero.png"></img>
         </h1>
 
         {/* Pokeball-style Start Button */}

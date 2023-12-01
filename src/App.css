@@ -1,12 +1,12 @@
-@import './index.css';
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import "./index.css";
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 .font-pokemon {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 .animated-gradient {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   background: linear-gradient(45deg, #f7d200, #005cbf, #ff1a1a);
   background-size: 200% 200%;
   color: transparent;
@@ -14,7 +14,6 @@
   -webkit-background-clip: text;
   animation: gradientAnimation 2s ease infinite;
   font-size: 42px;
-  
 }
 
 @keyframes gradientAnimation {
@@ -31,7 +30,7 @@
 
 * {
   margin: 0;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 ul {
@@ -45,17 +44,17 @@ li {
   padding: 16px;
 }
 
-.video{
+.video {
   object-fit: cover;
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 0;
   background-color: red;
+  filter: brightness(80%);
 }
 
 .container-landing {
-  
   position: relative;
   display: flex;
   flex-direction: column;
@@ -63,7 +62,6 @@ li {
   background-color: #000;
   width: 100%;
   text-align: center;
-  
 }
 
 .content {
@@ -75,9 +73,15 @@ li {
   padding-top: 5rem;
 }
 
+.content > h1 > img {
+  width: 700px;
+}
+
 .pokeball {
   background-color: transparent;
   border: none;
+  width: fit-content;
+  align-self: center;
   padding: 0;
   margin: 0;
   outline: none;
@@ -105,18 +109,18 @@ h1 {
 }
 
 .background {
-  background: url(../src/images/background.jpg) no-repeat center fixed; 
+  background: url(../src/images/background.jpg) no-repeat center fixed;
   background-size: cover;
   height: 95.3vh;
 }
 
 .achtergrond {
   top: 0;
-  background-image: url('../public/images/background.png');
+  background-image: url("../public/videos/gameBG.gif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 92.9vh;
 }
 
 .spacer {
@@ -132,7 +136,7 @@ form {
   padding: 20px;
   border-radius: 15px;
   color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 input {
@@ -156,7 +160,7 @@ input {
   font-weight: bold;
   font-size: medium;
   cursor: pointer;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 .link {
@@ -164,7 +168,7 @@ input {
   font-weight: bold;
   color: white;
   cursor: pointer;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 .link:hover {
@@ -178,24 +182,28 @@ input {
   padding: 1rem;
   border-radius: 0.5rem;
   display: flex;
+  float: right;
+  margin-right: 200px;
 }
 
 .console {
-  border: blue solid 2px;
   border-radius: 0.5rem;
   height: 120px;
   width: 30%;
   margin-left: 10%;
-  background-color: black;
+  float: right;
+  margin-right: 12.5rem;
 }
 
 .mr {
-  margin-right: 1rem;
+  margin-right: 36rem;
+  margin-top: 2rem;
+  float: left;
 }
 
 .pokemon {
-  width: 16rem;
-  height: 16rem;
+  width: 25rem;
+  height: 25rem;
   object-fit: cover;
   border-radius: 0.5rem;
 }
@@ -203,18 +211,19 @@ input {
 .options {
   display: flex;
   flex-direction: column;
+  padding-top: 10rem;
 }
 
 .option {
   background-color: #4299e1;
   border: none;
   color: #ffffff;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   border-radius: 0.25rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   cursor: pointer;
 }
 
@@ -227,6 +236,7 @@ input {
   text-align: center;
   color: #48bb78;
   font-weight: bold;
+  float: right;
 }
 
 .wrong {
@@ -237,8 +247,8 @@ input {
 }
 
 .next {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   padding: 1rem;
   margin-top: 0.5rem;
   border: none;
@@ -274,4 +284,13 @@ th {
   background: url(../src/images/scoreboard-background.gif) no-repeat center fixed; 
   background-size: cover;
   height: 95.3vh;
+}
+
+
+.timer {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  float: right;
+  margin-top: 10rem;
+  padding-left: 10rem;
 }
