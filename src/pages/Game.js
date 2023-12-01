@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../firebase';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Game = () => {
-  const [user, setUser] = useState(null);
   const [pokemon, setPokemon] = useState(null);
   const [options, setOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -14,41 +10,8 @@ const Game = () => {
   const [score, setScore] = useState(0);
   let timerInterval;
 
-  const [products,setProducts]=useState([])
-  const fetchProducts = async () => {
-    try {
-      const usersCollection = collection(db, 'users'); // Assuming 'users' is your collection name
-      const data = await getDocs(usersCollection);
-  
-      const fetchedProducts = [];
-      data.docs.forEach((doc) => {
-        fetchedProducts.push(doc.data());
-      });
-  
-      setProducts(fetchedProducts);
-    } catch (error) {
-      console.error('Error fetching users:', error);
-    }
-  };
-  
-
   useEffect(() => {
-    const auth = getAuth();
-    const unsubscribe = onAuthStateChanged(auth, (authUser) => {
-      if (authUser) {
-        // User is signed in
-        setUser(authUser);
-      } else {
-        // User is signed out
-        setUser(null);
-      }
-    });
-  
-    
     fetchPokemon();
-    fetchProducts();
-    
-    return () => unsubscribe();
   }, []);
 
   useEffect(() => {
@@ -59,7 +22,9 @@ const Game = () => {
     } else {
       clearInterval(timerInterval);
       if (!correct) {
-        handleNextPokemon();
+        setTimeout(() => {
+          handleNextPokemon();
+        }, 3000); // Delay for 3 seconds before moving to the next Pokémon
         setScore(0);
       }
     }
@@ -116,6 +81,10 @@ const Game = () => {
       clearInterval(timerInterval);
     } else {
       setCorrect(false);
+      setScore(0); // Reset the score when guessed incorrectly
+      setTimeout(() => {
+        handleNextPokemon();
+      }, 3000); // Delay for 3 seconds before moving to the next Pokémon
     }
     setSelectedOption(option);
   };
@@ -127,17 +96,6 @@ const Game = () => {
   };
 
   return (
-    <div className='achtergrond font-pokemon'>
-      <p>{user ? (
-        <div>
-          <div className="App">
-    </div>
-          <p>Welcome, {}!</p>
-          {/* Add other user information if needed */}
-        </div>
-      ) : (
-        <p>Guest</p>
-      )}</p>
     <div className="achtergrond font-pokemon">
       <div className="game-container font-pokemon">
         {pokemon && (
@@ -185,7 +143,6 @@ const Game = () => {
           <p>Time left: {timer}s</p>
         </div>
       </div>
-    </div>
     </div>
   );
 };
