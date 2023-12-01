@@ -178,7 +178,6 @@ input {
 /* Game Css */
 
 .game-container {
-  margin-left: 22rem;
   padding: 1rem;
   border-radius: 0.5rem;
   display: flex;
@@ -189,7 +188,7 @@ input {
 .console {
   border-radius: 0.5rem;
   height: 120px;
-  width: 30%;
+  width: 40%;
   margin-left: 10%;
   float: right;
   margin-right: 12.5rem;
@@ -256,36 +255,8 @@ input {
   font-weight: bold;
   margin-top: 1rem;
   cursor: pointer;
+  float: right;
 }
-
-table {
-  width: 20%;
-  margin-left: 600px;
-  margin-top: 150px;
-  text-align: center;
-  opacity: 0.7;
-  border-radius: 10px;
-  border: solid 7px #e53e3e;
-  background-color: #000;
-}
-
-th, td {
-  text-align: center;
-  padding: 8px;
-  color: #ffffff;
-}
-
-th {
-  background-color: #e53e3e;
-  color: white;
-}
-
-.scoreboard {
-  background: url(../src/images/scoreboard-background.gif) no-repeat center fixed; 
-  background-size: cover;
-  height: 95.3vh;
-}
-
 
 .timer {
   color: white;
