@@ -267,7 +267,6 @@ input {
   padding-left: 10rem;
 }
 
-<<<<<<< HEAD
 table {
   width: 20%;
   margin-left: 600px;
@@ -294,15 +293,4 @@ th {
   background: url(../src/images/scoreboard-background.gif) no-repeat center fixed; 
   background-size: cover;
   height: 95.3vh;
-=======
-.mute-button {
-  position: absolute;
-  bottom: 10px; /* Adjust this value to set the distance from the bottom */
-  left: 10px; /* Adjust this value to set the distance from the left */
-  background-color: #ffffff;
-  color: #000000;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
->>>>>>> f3fc2d63ffbc1a46d6c1952a22c594ca0fd53a94
 }
