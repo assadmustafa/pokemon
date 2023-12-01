@@ -7,7 +7,8 @@ const Game = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [correct, setCorrect] = useState(false);
   const [timer, setTimer] = useState(20);
-  let timerInterval; // Declare timerInterval outside of useEffect
+  const [score, setScore] = useState(0);
+  let timerInterval;
 
   useEffect(() => {
     fetchPokemon();
@@ -22,6 +23,7 @@ const Game = () => {
       clearInterval(timerInterval);
       if (!correct) {
         handleNextPokemon();
+        setScore(0); // Reset the score to 0 when the timer runs out
       }
     }
 
@@ -64,7 +66,7 @@ const Game = () => {
       );
       setPokemon(response.data);
       generateOptions(response.data);
-      setTimer(20); // Reset the timer for each new Pokemon
+      setTimer(20);
     } catch (error) {
       console.error("Error fetching Pokemon:", error);
     }
@@ -73,7 +75,8 @@ const Game = () => {
   const handleOptionClick = (option) => {
     if (option === pokemon.name) {
       setCorrect(true);
-      clearInterval(timerInterval); // Stop the timer when guessed correctly
+      setScore((prevScore) => prevScore + 1);
+      clearInterval(timerInterval);
     } else {
       setCorrect(false);
     }
@@ -114,6 +117,9 @@ const Game = () => {
         )}
       </div>
       <div className="console">
+        <div className="score">
+          <p>Score: {score}</p>
+        </div>
         {!correct && selectedOption && (
           <div className="wrong">
             <p>Wrong! The correct answer is {pokemon.name}.</p>
