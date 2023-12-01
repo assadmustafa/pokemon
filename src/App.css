@@ -278,7 +278,8 @@ table {
   background-color: #000;
 }
 
-th, td {
+th,
+td {
   text-align: center;
   padding: 8px;
   color: #ffffff;
@@ -290,7 +291,13 @@ th {
 }
 
 .scoreboard {
-  background: url(../src/images/scoreboard-background.gif) no-repeat center fixed; 
+  background: url(../src/images/scoreboard-background.gif) no-repeat center
+    fixed;
   background-size: cover;
   height: 95.3vh;
+}
+
+.score {
+  color: white;
+  text-shadow: 1px 1px 2px black;
 }
