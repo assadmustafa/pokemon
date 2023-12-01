@@ -5,7 +5,13 @@
   font-family: 'Press Start 2P', cursive;
 }
 
-.animated-gradient {
+.title-color{
+  color: #ffcc03;
+  font-size: 42px;
+
+}
+
+/* .animated-gradient {
   font-family: 'Press Start 2P', cursive;
   background: linear-gradient(45deg, #f7d200, #005cbf, #ff1a1a);
   background-size: 200% 200%;
@@ -27,7 +33,7 @@
   100% {
     background-position: 0% 0%;
   }
-}
+} */
 
 * {
   margin: 0;
@@ -52,6 +58,8 @@ li {
   position: absolute;
   z-index: 0;
   background-color: red;
+  filter: brightness(80%);
+
 }
 
 .container-landing {
