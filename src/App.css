@@ -51,6 +51,7 @@ li {
   position: absolute;
   z-index: 0;
   background-color: red;
+  filter: brightness(80%);
 }
 
 .container-landing {
