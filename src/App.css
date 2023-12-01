@@ -11,7 +11,7 @@
 
 }
 
-/* .animated-gradient {
+.animated-gradient {
   font-family: 'Press Start 2P', cursive;
   background: linear-gradient(45deg, #f7d200, #005cbf, #ff1a1a);
   background-size: 200% 200%;
@@ -33,7 +33,7 @@
   100% {
     background-position: 0% 0%;
   }
-} */
+} 
 
 * {
   margin: 0;
@@ -86,6 +86,8 @@ li {
 .pokeball {
   background-color: transparent;
   border: none;
+  width: fit-content;
+  align-self:center;
   padding: 0;
   margin: 0;
   outline: none;
@@ -189,12 +191,10 @@ input {
 }
 
 .console {
-  border: blue solid 2px;
   border-radius: 0.5rem;
   height: 120px;
   width: 40%;
   margin-left: 10%;
-  background-color: black;
 }
 
 .mr {
@@ -245,8 +245,8 @@ input {
 }
 
 .next {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   padding: 1rem;
   margin-top: 0.5rem;
   border: none;

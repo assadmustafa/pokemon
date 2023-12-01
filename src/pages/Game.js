@@ -92,7 +92,7 @@ const Game = () => {
           </div>
         )}
         {correct && (
-          <div className="correct">
+          <div className="correct ">
             <p>Correct!</p>
             <button
               onClick={handleNextPokemon}

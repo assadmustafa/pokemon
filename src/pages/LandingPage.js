@@ -21,7 +21,7 @@ const LandingPage = () => {
       <div className="content">
         {/* Animated Gradient Text */}
         <h1>
-          <span className="animated-gradient title-color">Pokemon minigames</span>
+          <span className="title-color">Pokemon minigames</span>
         </h1>
 
         {/* Pokeball-style Start Button */}
