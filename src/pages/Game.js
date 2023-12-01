@@ -3,8 +3,6 @@ import axios from 'axios';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import React, { useState, useEffect } from "react";
-import axios from "axios";
 
 const Game = () => {
   const [user, setUser] = useState(null);
