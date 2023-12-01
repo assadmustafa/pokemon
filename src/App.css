@@ -1,20 +1,8 @@
-@import './index.css';
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import "./index.css";
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 .font-pokemon {
-  font-family: 'Press Start 2P', cursive;
-}
-
-.animated-gradient {
-  font-family: 'Press Start 2P', cursive;
-  background: linear-gradient(45deg, #f7d200, #005cbf, #ff1a1a);
-  background-size: 200% 200%;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation: gradientAnimation 2s ease infinite;
-  font-size: 42px;
-  
+  font-family: "Press Start 2P", cursive;
 }
 
 @keyframes gradientAnimation {
@@ -31,7 +19,7 @@
 
 * {
   margin: 0;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 ul {
@@ -45,17 +33,15 @@ li {
   padding: 16px;
 }
 
-.video{
+.video {
   object-fit: cover;
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 0;
-  background-color: red;
 }
 
 .container-landing {
-  
   position: relative;
   display: flex;
   flex-direction: column;
@@ -63,7 +49,6 @@ li {
   background-color: #000;
   width: 100%;
   text-align: center;
-  
 }
 
 .content {
@@ -73,6 +58,10 @@ li {
   position: relative;
   z-index: 10;
   padding-top: 5rem;
+}
+
+.content > h1 > img {
+  width: 700px;
 }
 
 .pokeball {
@@ -105,14 +94,14 @@ h1 {
 }
 
 .background {
-  background: url(../src/images/background.jpg) no-repeat center fixed; 
+  background: url(../src/images/background.jpg) no-repeat center fixed;
   background-size: cover;
   height: 95.3vh;
 }
 
 .achtergrond {
   top: 0;
-  background-image: url('../public/images/background.png');
+  background-image: url("../public/images/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -132,7 +121,7 @@ form {
   padding: 20px;
   border-radius: 15px;
   color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 input {
@@ -156,7 +145,7 @@ input {
   font-weight: bold;
   font-size: medium;
   cursor: pointer;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 .link {
@@ -164,7 +153,7 @@ input {
   font-weight: bold;
   color: white;
   cursor: pointer;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 .link:hover {
