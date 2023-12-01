@@ -5,6 +5,17 @@
   font-family: "Press Start 2P", cursive;
 }
 
+.animated-gradient {
+  font-family: "Press Start 2P", cursive;
+  background: linear-gradient(45deg, #f7d200, #005cbf, #ff1a1a);
+  background-size: 200% 200%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: gradientAnimation 2s ease infinite;
+  font-size: 42px;
+}
+
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 0%;
@@ -39,6 +50,7 @@ li {
   height: 100%;
   position: absolute;
   z-index: 0;
+  background-color: red;
 }
 
 .container-landing {
@@ -67,6 +79,8 @@ li {
 .pokeball {
   background-color: transparent;
   border: none;
+  width: fit-content;
+  align-self: center;
   padding: 0;
   margin: 0;
   outline: none;
@@ -170,12 +184,10 @@ input {
 }
 
 .console {
-  border: blue solid 2px;
   border-radius: 0.5rem;
   height: 120px;
   width: 40%;
   margin-left: 10%;
-  background-color: black;
 }
 
 .mr {
@@ -226,8 +238,8 @@ input {
 }
 
 .next {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   padding: 1rem;
   margin-top: 0.5rem;
   border: none;
