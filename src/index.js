@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import SignOut from "./SignOut";
 import Game from "./pages/Game";
+import Scoreboard from "./pages/Scoreboard";
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap');
 </style>
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="game" element={<Game />} />
+          <Route path="scoreboard" element={<Scoreboard />} />
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
           <Route path="signout" element={<SignOut />} />

@@ -174,7 +174,7 @@ input {
 /* Game Css */
 
 .game-container {
-  margin-left: 20rem;
+  margin-left: 22rem;
   padding: 1rem;
   border-radius: 0.5rem;
   display: flex;
@@ -184,7 +184,7 @@ input {
   border: blue solid 2px;
   border-radius: 0.5rem;
   height: 120px;
-  width: 40%;
+  width: 30%;
   margin-left: 10%;
   background-color: black;
 }
@@ -246,4 +246,32 @@ input {
   font-weight: bold;
   margin-top: 1rem;
   cursor: pointer;
+}
+
+table {
+  width: 20%;
+  margin-left: 600px;
+  margin-top: 150px;
+  text-align: center;
+  opacity: 0.7;
+  border-radius: 10px;
+  border: solid 7px #e53e3e;
+  background-color: #000;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+  color: #ffffff;
+}
+
+th {
+  background-color: #e53e3e;
+  color: white;
+}
+
+.scoreboard {
+  background: url(../src/images/scoreboard-background.gif) no-repeat center fixed; 
+  background-size: cover;
+  height: 95.3vh;
 }

@@ -1,14 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../firebase';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 const Game = () => {
+  const [user, setUser] = useState(null);
   const [pokemon, setPokemon] = useState(null);
   const [options, setOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
   const [correct, setCorrect] = useState(false);
 
+  const [products,setProducts]=useState([])
+  const fetchProducts = async () => {
+    try {
+      const usersCollection = collection(db, 'users'); // Assuming 'users' is your collection name
+      const data = await getDocs(usersCollection);
+  
+      const fetchedProducts = [];
+      data.docs.forEach((doc) => {
+        fetchedProducts.push(doc.data());
+      });
+  
+      setProducts(fetchedProducts);
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    }
+  };
+  
+
   useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (authUser) => {
+      if (authUser) {
+        // User is signed in
+        setUser(authUser);
+      } else {
+        // User is signed out
+        setUser(null);
+      }
+    });
+  
+    
     fetchPokemon();
+    fetchProducts();
+    
+    return () => unsubscribe();
   }, []);
 
   const getRandomPokemonId = () => {
@@ -60,6 +97,16 @@ const Game = () => {
 
   return (
     <div className='achtergrond font-pokemon'>
+      <p>{user ? (
+        <div>
+          <div className="App">
+    </div>
+          <p>Welcome, {}!</p>
+          {/* Add other user information if needed */}
+        </div>
+      ) : (
+        <p>Guest</p>
+      )}</p>
       <div className="game-container font-pokemon">
         {pokemon && (
           <div className='font-pokemon'>
