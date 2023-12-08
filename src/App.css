@@ -78,26 +78,27 @@ li {
 }
 
 .pokeball {
-  background-color: transparent;
-  border: none;
   width: fit-content;
-  align-self: center;
-  padding: 0;
-  margin: 0;
-  outline: none;
-  transform: none;
-  transition-property: transform;
-  transition-duration: 0.3s;
-}
-
-.pokeball img {
-  cursor: pointer;
-  width: 10rem;
-  height: 10rem;
+  margin-top: 20px;
+  line-height: 60px;
+  font-weight: bold;
+  font-size: large;
+  color: black;
+  padding: 0 40px;
+  background: lightblue;
+  border: 3px solid #003060;
+  border-radius: 40px;
+  box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pokeball:hover {
-  transform: scale(1.1);
+  background: #003060;
+  color: white;
+  position: relative;
+  top: 10px;
+  box-shadow: none;
 }
 
 h1 {
