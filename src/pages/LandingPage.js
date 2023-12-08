@@ -47,6 +47,9 @@ const LandingPage = () => {
             <FontAwesomeIcon icon="fa-solid fa-volume-xmark" />
           )}
         </button>
+        <p className="homeText">
+          login or signup to track score and play multiplayer
+        </p>
       </div>
     </div>
   );

@@ -119,6 +119,22 @@ const Game = () => {
                 </button>
               ))}
             </div>
+            {correct && (
+              <div className="correct ">
+                <p>Correct!</p>
+                <button
+                  onClick={handleNextPokemon}
+                  className="next font-pokemon"
+                >
+                  Next Pokémon
+                </button>
+              </div>
+            )}
+            {!correct && selectedOption && (
+              <div className="wrong">
+                <p>Wrong! The correct answer is {pokemon.name}.</p>
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -126,19 +142,6 @@ const Game = () => {
         <div className="score">
           <p>Score: {score}</p>
         </div>
-        {!correct && selectedOption && (
-          <div className="wrong">
-            <p>Wrong! The correct answer is {pokemon.name}.</p>
-          </div>
-        )}
-        {correct && (
-          <div className="correct ">
-            <p>Correct!</p>
-            <button onClick={handleNextPokemon} className="next font-pokemon">
-              Next Pokémon
-            </button>
-          </div>
-        )}
         <div className="timer">
           <p>Time left: {timer}s</p>
         </div>
