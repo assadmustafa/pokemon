@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faVolumeHigh, faVolumeXmark } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faVolumeHigh, faVolumeXmark);
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -36,7 +41,11 @@ const LandingPage = () => {
 
         {/* Mute Button in Bottom Left */}
         <button className="mute-button" onClick={handleToggleMute}>
-          {isMuted ? "Unmute" : "Mute"}
+          {isMuted ? (
+            <FontAwesomeIcon icon="fa-solid fa-volume-high" />
+          ) : (
+            <FontAwesomeIcon icon="fa-solid fa-volume-xmark" />
+          )}
         </button>
       </div>
     </div>
