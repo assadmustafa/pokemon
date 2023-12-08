@@ -74,7 +74,7 @@ body {
   flex-direction: column;
   position: relative;
   z-index: 10;
-  padding-top: 5rem;
+  padding-top: 10rem;
 }
 
 .content > h1 > img {
@@ -83,7 +83,7 @@ body {
 
 .pokeball {
   width: fit-content;
-  margin-top: 20px;
+  margin-top: 80px;
   line-height: 60px;
   font-weight: bold;
   font-size: large;
@@ -248,20 +248,9 @@ input {
 /* Game Css */
 
 .game-container {
-  padding: 1rem;
-  border-radius: 0.5rem;
   display: flex;
-  float: right;
-  margin-right: 200px;
-}
-
-.console {
-  border-radius: 0.5rem;
-  height: 120px;
-  width: 40%;
-  margin-left: 10%;
-  float: right;
-  margin-right: 12.5rem;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mr {
@@ -275,6 +264,31 @@ input {
   height: 25rem;
   object-fit: cover;
   border-radius: 0.5rem;
+}
+
+.console {
+  margin-left: 16rem;
+}
+
+.score,
+.timer {
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background-color: #fff;
+  color: black;
+  text-shadow: 1px 1px 2px gray;
+  text-align: center;
+}
+
+.score {
+  width: 150px;
+  margin-bottom: 1rem;
+  margin-left: 2.5rem;
+}
+
+.timer {
+  width: 230px;
 }
 
 .options {
@@ -329,14 +343,6 @@ input {
   float: right;
 }
 
-.timer {
-  color: white;
-  text-shadow: 1px 1px 2px black;
-  float: right;
-  margin-top: 10rem;
-  padding-left: 10rem;
-}
-
 table {
   width: 20%;
   margin-left: 600px;
@@ -365,9 +371,4 @@ th {
     fixed;
   background-size: cover;
   height: 95.3vh;
-}
-
-.score {
-  color: white;
-  text-shadow: 1px 1px 2px black;
 }
