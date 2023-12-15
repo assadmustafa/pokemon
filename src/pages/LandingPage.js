@@ -50,6 +50,7 @@ const LandingPage = () => {
         <p className="homeText">
           login or signup to track score and play multiplayer
         </p>
+
       </div>
     </div>
   );
