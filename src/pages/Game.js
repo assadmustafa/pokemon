@@ -6,7 +6,7 @@ const Game = () => {
   const [options, setOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
   const [correct, setCorrect] = useState(false);
-  const [timer, setTimer] = useState(10); // Change the initial timer value to 10
+  const [timer, setTimer] = useState(10);
   const [score, setScore] = useState(0);
   let timerInterval;
 
