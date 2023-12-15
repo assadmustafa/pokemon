@@ -109,7 +109,7 @@ body {
   background: #003060;
   color: white;
   position: relative;
-  top: 10px;
+  transition-duration: 500ms;
   box-shadow: none;
 }
 
