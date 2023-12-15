@@ -186,6 +186,7 @@ input {
 }
 
 .link:hover {
+  transition-duration: 500ms;
   color: yellow;
 }
 
@@ -312,17 +313,18 @@ input {
   background-color: #4299e1;
   border: none;
   color: #ffffff;
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
   border-radius: 0.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   cursor: pointer;
 }
 
 .option:hover {
   background-color: #005cbf;
+  transition-duration: 500ms;
 }
 
 .correct {
@@ -390,3 +392,6 @@ th {
   background-size: cover;
   height: 95.3vh;
 }
+
+
+
