@@ -42,9 +42,9 @@ const LandingPage = () => {
         {/* Mute Button in Bottom Left */}
         <button className="mute-button" onClick={handleToggleMute}>
           {isMuted ? (
-            <FontAwesomeIcon icon="fa-solid fa-volume-high" />
+              <FontAwesomeIcon icon="fa-solid fa-volume-xmark" />
           ) : (
-            <FontAwesomeIcon icon="fa-solid fa-volume-xmark" />
+              <FontAwesomeIcon icon="fa-solid fa-volume-high" />
           )}
         </button>
         <p className="homeText">
