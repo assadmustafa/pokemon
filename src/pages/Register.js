@@ -10,14 +10,22 @@ import { useNavigate } from "react-router-dom";
 const Register = () => {
   const navigate = useNavigate();
   const [nickname, setNickname] = useState("");
-  const [score] = useState("");
+  const [score] = useState(""); // You might want to handle score appropriately
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [inputError, setInputError] = useState(false); // New state for input validation
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
     try {
+      // Input validation
+      if (!nickname) {
+        toast.error("Please enter a nickname.");
+        setInputError(true);
+        return;
+      }
+
       // Create user in Firebase Authentication
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -38,11 +46,13 @@ const Register = () => {
       console.log("User added to Firestore with ID: ", userRef.id);
 
       toast.success("Account created successfully");
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.error(errorCode, errorMessage);
+
+      setInputError(true);
 
       if (errorCode === "auth/weak-password") {
         toast.error("Password is too weak. Please use a stronger password.");
@@ -64,6 +74,7 @@ const Register = () => {
         <div>
           <input
             type="text"
+            className={inputError ? "error" : ""}
             label="Nickname"
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
@@ -75,6 +86,7 @@ const Register = () => {
         <div>
           <input
             type="email"
+            className={inputError ? "error" : ""}
             label="Email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -86,6 +98,7 @@ const Register = () => {
         <div>
           <input
             type="password"
+            className={inputError ? "error" : ""}
             label="Create password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
