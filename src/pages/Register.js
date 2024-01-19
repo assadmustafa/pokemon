@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 const Register = () => {
   const navigate = useNavigate();
   const [nickname, setNickname] = useState("");
-  const [score] = useState(""); // You might want to handle score appropriately
+  const [score] = useState(0); // You might want to handle score appropriately
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [inputError, setInputError] = useState(false); // New state for input validation
