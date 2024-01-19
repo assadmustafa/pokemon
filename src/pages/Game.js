@@ -132,7 +132,7 @@ const Game = () => {
             )}
             {!correct && selectedOption && (
               <div className="wrong">
-                <p>Wrong! The correct answer is {pokemon.name}.</p>
+                <p>Wrong! The correct answer is <b className="correct_answer">{pokemon.name}</b>.</p>
               </div>
             )}
           </div>

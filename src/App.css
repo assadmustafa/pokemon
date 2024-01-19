@@ -371,7 +371,9 @@ table {
   border: solid 7px #e53e3e;
   background-color: #000;
 }
-
+.correct_answer{
+  color: #f7d200;
+}
 th,
 td {
   text-align: center;

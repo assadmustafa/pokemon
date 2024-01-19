@@ -10,11 +10,6 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const [isMuted, setIsMuted] = useState(false);
 
-  const onStart = () => {
-    // Replace '/game' with the actual path you want to navigate to
-    navigate("/game");
-  };
-
   const handleToggleMute = () => {
     setIsMuted(!isMuted);
   };
@@ -35,9 +30,12 @@ const LandingPage = () => {
         </h1>
 
         {/* Pokeball-style Start Button */}
-        <button onClick={onStart} className="pokeball">
-          Start Game
-        </button>
+        <button onClick={() => navigate("/Game")} className="pokeball">
+  Single Player
+</button>
+        <button onClick={() => navigate("/OneMinGame")} className="pokeball">
+  1 Minute Game
+</button>
 
         {/* Mute Button in Bottom Left */}
         <button className="mute-button" onClick={handleToggleMute}>
