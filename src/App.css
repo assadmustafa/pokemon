@@ -44,9 +44,7 @@ li {
   padding: 16px;
 }
 
-body {
-  overflow: hidden;
-}
+
 
 .video {
   object-fit: cover;
@@ -74,7 +72,7 @@ body {
   flex-direction: column;
   position: relative;
   z-index: 10;
-  padding-top: 10rem;
+  padding-top: 4rem;
 }
 
 .content > h1 > img {
