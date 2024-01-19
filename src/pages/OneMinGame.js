@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
 const OneMinGame = () => {
   const [pokemon, setPokemon] = useState(null);
   const [options, setOptions] = useState([]);
@@ -117,31 +116,49 @@ const OneMinGame = () => {
         </div>
       ) : (
         <div className="game-container font-pokemon">
-          <div className="font-pokemon">
-            {pokemon && (
-              <div className="font-pokemon">
-                <div className="mr">
-                  <img
-                    className="pokemon"
-                    src={pokemon.sprites.front_default}
-                    alt={pokemon.name}
-                  />
+          {pokemon && (
+            <div className="font-pokemon">
+              <div className="mr">
+                <img
+                  className="pokemon"
+                  src={pokemon.sprites.front_default}
+                  alt={pokemon.name}
+                />
+                <div className="console">
+                  <div className="score">
+                    <p>Score: {score}</p>
+                  </div>
+                  <div className="timer">
+                    <p>Time left: {timer}s</p>
+                  </div>
                 </div>
-                <div className="options font-pokemon">
-                  {options.map((option) => (
-                    <button
-                      key={option}
-                      onClick={() => handleOptionClick(option)}
-                      className={`option font-pokemon`}
-                      disabled={selectedOption !== null}
-                    >
-                      {option}
-                    </button>
-                  ))}
+              </div>
+              <div className="options font-pokemon">
+                {options.map((option) => (
+                  <button
+                    key={option}
+                    onClick={() => handleOptionClick(option)}
+                    className={`option font-pokemon`}
+                    disabled={selectedOption !== null}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+              {correct && (
+                <div className="correct ">
+                  <p>Correct!</p>
+                  <button
+                    onClick={handleNextPokemon}
+                    className="next font-pokemon"
+                  >
+                    Next Pokémon
+                  </button>
                 </div>
-                {correct && (
-                  <div className="correct ">
-                    <p>Correct!</p>
+              )}
+              {!correct && selectedOption && (
+                <div>
+                  <div>
                     <button
                       onClick={handleNextPokemon}
                       className="next font-pokemon"
@@ -149,32 +166,17 @@ const OneMinGame = () => {
                       Next Pokémon
                     </button>
                   </div>
-                )}
-                {!correct && selectedOption && (
                   <div className="wrong">
                     <p>
                       Wrong! The correct answer is{" "}
                       <b className="correct_answer">{pokemon.name}</b>.
                     </p>
-                    <button
-                      onClick={handleNextPokemon}
-                      className="next font-pokemon"
-                    >
-                      Next Pokémon
-                    </button>
+                    <br />
                   </div>
-                )}
-              </div>
-            )}
-          </div>
-          <div className="console">
-            <div className="score">
-              <p>Score: {score}</p>
+                </div>
+              )}
             </div>
-            <div className="timer">
-              <p>Time left: {timer}s</p>
-            </div>
-          </div>
+          )}
         </div>
       )}
     </div>
