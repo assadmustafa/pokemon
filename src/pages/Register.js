@@ -46,7 +46,7 @@ const Register = () => {
       console.log("User added to Firestore with ID: ", userRef.id);
 
       toast.success("Account created successfully");
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
