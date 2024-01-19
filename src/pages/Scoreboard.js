@@ -7,66 +7,64 @@ const Scoreboard = () => {
     const [user, setUser] = useState(null);
     const [products,setProducts]=useState([])
     const fetchProducts = async () => {
-      try {
-        const usersCollection = collection(db, 'users'); // Assuming 'users' is your collection name
-        const data = await getDocs(usersCollection);
-    
-        const fetchedProducts = [];
-        data.docs.forEach((doc) => {
-          fetchedProducts.push(doc.data());
-        });
-    
-        setProducts(fetchedProducts);
-      } catch (error) {
-        console.error('Error fetching users:', error);
-      }
-    };
-    
-  
-    useEffect(() => {
-      const auth = getAuth();
-      const unsubscribe = onAuthStateChanged(auth, (authUser) => {
-        if (authUser) {
-          // User is signed in
-          setUser(authUser);
-        } else {
-          // User is signed out
-          setUser(null);
-        }
-      });
-    
-      
-      fetchProducts();
-      
-      return () => unsubscribe();
-    }, []);
-  
+        try {
+            const usersCollection = collection(db, 'users'); // Assuming 'users' is your collection name
+            const data = await getDocs(usersCollection);
 
-  
-    
-  
-  
+            const fetchedProducts = [];
+            data.docs.forEach((doc) => {
+                fetchedProducts.push(doc.data());
+            });
+
+            // Sort the fetched products by score in descending order
+            fetchedProducts.sort((a, b) => b.score - a.score);
+
+            setProducts(fetchedProducts);
+        } catch (error) {
+            console.error('Error fetching users:', error);
+        }
+    };
+
+
+    useEffect(() => {
+        const auth = getAuth();
+        const unsubscribe = onAuthStateChanged(auth, (authUser) => {
+            if (authUser) {
+                // User is signed in
+                setUser(authUser);
+            } else {
+                // User is signed out
+                setUser(null);
+            }
+        });
+
+
+        fetchProducts();
+
+        return () => unsubscribe();
+    }, []);
+
     return (
-      <div className='scoreboard font-pokemon'><br></br><br></br>
-        <h1 className='animated-gradient'>Scoreboard</h1>
-        <table>
-        <tr>
-          <th>Player</th>
-          <th>Score</th>
-        </tr>
-        {products && products.map(product => (
-          <tr key={product.id}>
-            <td>
-              <p>{product.nickname}</p>
-            </td>
-            <td>
-              <p>{product.score}</p>
-            </td>
-          </tr>
-    ))}
-  </table>
+        <div className='scoreboard font-pokemon'><br></br><br></br>
+            <h1 className='animated-gradient'>Scoreboard</h1>
+            <table>
+                <tr>
+                    <th>Player</th>
+                    <th>Score</th>
+                </tr>
+                {products && products.map(product => (
+                    <tr key={product.id}>
+                        <td>
+                            <p>{product.nickname}</p>
+                        </td>
+                        <td>
+                            <p>{product.score}</p>
+                        </td>
+                    </tr>
+                ))}
+            </table>
         </div>
     );
-  };
-  
-  export default Scoreboard;
+};
+
+export default Scoreboard;
