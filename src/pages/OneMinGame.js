@@ -158,7 +158,14 @@ const OneMinGame = () => {
               )}
               {!correct && selectedOption && (
                 <div>
-                  <div>
+
+                  <div className="wrong">
+                    <p>
+                      Wrong! The correct answer is{" "}
+                      <b className="correct_answer">{pokemon.name}</b>.
+                    </p>
+                    <br />
+                    <div>
                     <button
                       onClick={handleNextPokemon}
                       className="next font-pokemon"
@@ -166,12 +173,6 @@ const OneMinGame = () => {
                       Next Pokémon
                     </button>
                   </div>
-                  <div className="wrong">
-                    <p>
-                      Wrong! The correct answer is{" "}
-                      <b className="correct_answer">{pokemon.name}</b>.
-                    </p>
-                    <br />
                   </div>
                 </div>
               )}
