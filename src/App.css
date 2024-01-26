@@ -29,7 +29,7 @@
 }
 
 * {
-  margin: 0;
+  margin: auto;
   font-family: "Press Start 2P", cursive;
 }
 
@@ -290,8 +290,7 @@ input {
 
 .score {
   width: 150px;
-  margin-bottom: 1rem;
-  margin-left: 2.5rem;
+  margin: auto;
 }
 
 .timer {
@@ -389,11 +388,10 @@ th {
   height: 95.3vh;
 }
 
+.console {
+  padding: 5px;
 
-
-
-
-
+}
 
 .game-over {
   display: flex;
