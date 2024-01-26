@@ -24,7 +24,7 @@ const Game = () => {
       if (!correct) {
         setTimeout(() => {
           handleNextPokemon();
-        }, 3000); // Delay for 3 seconds before moving to the next Pokémon
+        }, 30000); // Delay for 3 seconds before moving to the next Pokémon
         setScore(0);
       }
     }
